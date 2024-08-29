@@ -1,21 +1,16 @@
 #include <stdio.h>
 
-int sum(int n1, int n2)
+int ft_sum(int n)
 {
-	if (n1 > n2)
-		return 0;
-	return n1 + sum(n1 + 1, n2);
-	return 0;
+    if (n < 0)
+        return 0;
+    return n + ft_sum(n - 1);
 }
-
-int main(void) {
-	int n1;
-	int n2;
-	int res;
-
-	scanf("%d", &n1);
-	scanf("%d", &n2);
-	res = sum(n1, n2);
-	printf("%d\n", res);
-	return 0;
+int main(void)
+{
+    int N;
+    int res;
+    scanf("%d", &N);
+    res = ft_sum(N);
+    printf("%d\n", res);
 }
