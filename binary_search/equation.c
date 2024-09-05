@@ -1,19 +1,29 @@
 #include <stdio.h>
+#define Tolerance 0.01
 
-double binary_search(double X, int N)
+double  f(double X)
 {
-    if ((X(X(X + 1) + 2) + 3) > N)
-        return X;
-    binary_search(X+0.01, N);
+    return X * (X * (X + 1) + 2) + 3;
 }
 
-int main(void) {
-    int N;
-    double res;
+int main(void)
+{
+    double N;
+    scanf("%lf", &N);
+    double left;
+    double right;
+    double mid;
 
-    res = 0.01;
-    scanf("%d", &N);
-    res = binary_search(res, N);
-  printf("%f\n", res);
-  return 0;
+    right = 100;
+    left = 0;
+    while ((right - left) > Tolerance)
+    {
+        mid = (left + right) / 2;
+        if (f(mid) < N)
+            left = mid;
+        else
+            right = mid;
+    }
+    printf("%lf\n", right);
+    return 0;
 }
