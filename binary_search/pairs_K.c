@@ -32,9 +32,9 @@ int main(void)
     {
         // 各要素数初めから終わりまでチェックするために、初期化する
         left = 0;
-        right = N-1;
+        right = N;
         // 内側ループで条件を満たす最小の値を確定させる
-        while (left != right)
+        while (left < right)
         {
             int mid = (right + left) / 2;
             // 条件を満たすなら今チェックしてる値も含めて右側を更新する
